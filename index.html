@@ -385,12 +385,12 @@
                 <div class="experience-company" style="color: var(--text-secondary);">Queer Life Space (Consultant)</div>
                 
                 <div class="experience-location">San Francisco, CA</div>
-                <ul>
-                   <li>Engineered and deployed an A/B testing pipeline for the organization’s website, resulting in a <b>15% increase in donations</b> through conversion rate optimization and user behavior analysis.</li>
-                    <li>Developed a dynamic sliding scale pricing model, promoting nonprofit financial stability while <b>improving client engagement by 10%</b>.</li>
-                    <li>Designed and deployed a real-time dashboard to monitor trends, enabling <b>20% faster data-driven decision-making</b> aligned with nonprofit goals.</li>
-
-                </ul>
+             <ul>
+              <li>Engineered a custom A/B testing framework using JavaScript and GCP backend, increasing donation conversions by <b>15%</b> through statistically reliable sequential experiments in low-traffic, high-variance settings.</li>
+              <li>Designed and deployed a HIPAA-compliant ETL pipeline with Python and GCP, integrating and anonymizing data from five sources to support a pricing sensitivity model; built a secure PostgreSQL database with role-based access control and encryption.</li>
+              <li>Developed a pricing sensitivity model to identify the nonprofit’s minimum sustainable fee while ensuring equitable access, emphasizing interpretability for transparent decision-making and improving client engagement by <b>10%</b>.</li>
+              <li>Built and deployed an interactive React dashboard with FastAPI backend, containerized via Docker and hosted on GCP, enabling real-time pricing adjustments that stabilized nonprofit finances and boosted client accessibility by <b>35%</b>. Implemented CI/CD pipelines with GitHub Actions for automated testing and deployment.</li>
+            </ul>
             </div>
         </div>
 
@@ -403,11 +403,10 @@
                 
                 <div class="experience-location">San Francisco, CA</div>
                 <ul>
-                    <li>Built a scalable geospatial data pipeline using AWS S3 and Planet Labs APIs, reducing data processing time by 50% for remote sensing analysis.</li>
-                    <li>Engineered a <b>scalable AWS geospatial pipeline</b> processing <b>600+ GB of satellite imagery</b> with spectral bands and NIR differencing, achieving <b>97%+ accuracy</b> in surface water detection and <b>reducing processing time by 50%</b>.</li>
-<li>Leveraged <b>remote sensing</b> and <b>cloud-native data pipelines</b> to advance <b>conservation technology</b>, enhancing water resource monitoring and supporting <b>biodiversity preservation</b> across California ecosystems.</li>
-
-                    <li>Developed time-series models (LSTM, ARIMA, Prophet, XGBoost) to predict low-flow events, enhancing proactive resource management.</li>
+                  <li>Built a globally scalable AWS geospatial pipeline processing 3TB+ of satellite imagery weekly across five pilot sites, using NDWI, Otsu thresholding, and Canny edge detection, reducing processing time by 50%.</li>
+                  <li>Engineered automated satellite-based surface water detection with 97%+ accuracy, replacing physical stream gauges and delivering $225K in first-year savings across five test sites with projected exponential savings.</li>
+                  <li>Leveraged remote sensing and cloud-native pipelines to enhance conservation technology, improving water resource monitoring and supporting biodiversity preservation across California ecosystems.</li>
+                  <li>Developed XGBoost time-series models with engineered seasonal and hydrological features, boosting low-flow event prediction accuracy from 82% to 93%, outperforming SARIMAX baselines for proactive resource management.</li>
                 </ul>
             </div>
         </div>
@@ -422,12 +421,16 @@
                             <div class="experience-location">San Francisco, CA</div>
             <ul>
               <li>
-                Engineered and implemented a custom U-Net neural network for automated cell counting in microscopy images, achieving <b>95% pixel accuracy</b> and <b>saving 60 hours/month</b>, resulting in <b>$36K in annual labor cost savings</b>.
+                Developed and deployed a custom U-Net with ResNet backbone for automated cell counting on 50,000+ microscopy images, achieving <b>98% pixel accuracy</b> and <b>saving $36K annually</b> by reducing manual annotation time by 60 hours/month.
               </li>
               <li>
-                Preprocessed microscopy image datasets from the Schroeder Lab at USF using <b>data augmentation and normalization</b> to optimize for deep learning. Optimized CUDA training, <b>reducing processing time by 45%</b>, and fine-tuned hyperparameters with regularization, <b>improving model generalization by 15%</b> on unseen data.
+                Optimized multi-GPU training with PyTorch DDP, CUDA, and NCCL, cutting training time by 60%, and expanded dataset size 20x via on-the-fly data augmentation. Fine-tuned hyperparameters with regularization, boosting model generalization by 15% on unseen data.
+              </li>
+              <li>
+                Implemented a full MLOps pipeline using Docker, MLflow, and CI/CD, reducing inference time by 45% through CUDA optimization and TensorRT acceleration.
               </li>
             </ul>
+
             
                         </div>
                     </div>
@@ -441,7 +444,7 @@
         <div class="experience-company" style="color: var(--text-secondary);">Independent · Part-time</div>
         <div class="experience-location">San Jose, CA · Hybrid</div>
         <ul>
-            <li>Taught AP and <b>college-level calculus, differential equations, linear algebra, probability, and statistics.</b></li>
+            <li>Taught AP and <b>college-level calculus, differential equations, linear algebra, probability, and statistics to 100+ students.</b></li>
             <li>Adapted lessons to student learning styles, emphasizing connections between concepts and real-world applications to deepen understanding and critical thinking.</li>
         </ul>
     </div>
@@ -457,9 +460,10 @@
     <div class="card">
         <h4>Weight Loss AI Assistant</h4>
         <p>
-            <b>Fine-tuned and prompt-engineered CV and LLM models</b> for automated food logging and personalized guidance using <b>retrieval-augmented generation</b> with <b>vector databases</b> for context-aware coaching.<br>
-            Deployed a <b>scalable multi-agent system</b> with <b>Docker containerization</b> and <b>cloud orchestration (AWS/GCP)</b>, enabling <b>end-to-end AI/ML pipeline automation</b> and expert agent integration.
+          <b>Fine-tuned and prompt-engineered CV and LLM models</b> for automated food logging and personalized guidance using <b>retrieval-augmented generation (RAG)</b> with <b>vector databases</b> for context-aware coaching.<br>
+          Developed and deployed a <b>scalable multi-agent system</b> using <b>Docker containerization</b> and <b>cloud orchestration (AWS/GCP)</b>, enabling <b>end-to-end AI/ML pipeline automation</b> with real-time agent coordination and expert knowledge integration via LangChain and a PostgreSQL + Supabase backend.
         </p>
+
         <div class="mt-3">
             <span class="tech-badge">Python</span>
             <span class="tech-badge">Docker</span>
