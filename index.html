@@ -411,10 +411,15 @@
                 
                 <div class="experience-location">San Francisco, CA</div>
                 <ul>
-                  <li>Built a globally scalable AWS geospatial pipeline processing 3TB+ of satellite imagery weekly across five pilot sites, using NDWI, Otsu thresholding, and Canny edge detection, reducing processing time by 50%.</li>
-                  <li>Engineered automated satellite-based surface water detection with 97%+ accuracy, replacing physical stream gauges and delivering $225K in first-year savings across five test sites with projected exponential savings.</li>
-                  <li>Leveraged remote sensing and cloud-native pipelines to enhance conservation technology, improving water resource monitoring and supporting biodiversity preservation across California ecosystems.</li>
-                  <li>Developed XGBoost time-series models with engineered seasonal and hydrological features, boosting low-flow event prediction accuracy from 82% to 93%, outperforming SARIMAX baselines for proactive resource management.</li>
+                  <li>
+                    Built a <b>globally scalable, distributed surface water detection pipeline</b> using NDWI, Otsu thresholding, and Canny edge detection, processing <b>3TB+ of satellite imagery weekly</b> across 5 pilot sites. Deployed on <b>AWS (S3, EC2, Lambda)</b> with autoscaling infrastructure and orchestrated via <b>Apache Airflow</b>.
+                  </li>
+                  <li>
+                    Replaced physical stream gauges with an automated satellite-based system, delivering <b>$225K in first-year savings</b> across 5 test sites with projected exponential savings as coverage scales.
+                  </li>
+                  <li>
+                    Developed <b>XGBoost forecasting models</b> with engineered seasonal and hydrological features to predict stream drying, <b>boosting accuracy from 82% to 93%</b> and outperforming SARIMAX baselines across multiple watersheds.
+                  </li>
                 </ul>
             </div>
         </div>
@@ -427,19 +432,20 @@
                 <div class="experience-company" style="color: var(--text-secondary);">University of San Francisco</div>
 
                             <div class="experience-location">San Francisco, CA</div>
-            <ul>
+           <ul>
               <li>
-                Developed and deployed a custom U-Net with ResNet backbone for automated cell counting on 50,000+ microscopy images, achieving <b>98% pixel accuracy</b> and <b>saving $36K annually</b> by reducing manual annotation time by 60 hours/month.
+                Developed and deployed custom <b>U-Net architecture</b> using <b>PyTorch</b> with transfer learning from <b>ResNet backbone</b>, achieving <b>98% pixel-level accuracy</b> for automated cell segmentation across 50,000+ microscopy images.
               </li>
               <li>
-                Optimized multi-GPU training with PyTorch DDP, CUDA, and NCCL, cutting training time by 60%, and expanded dataset size 20x via on-the-fly data augmentation. Fine-tuned hyperparameters with regularization, boosting model generalization by 15% on unseen data.
+                Optimized <b>multi-GPU training pipeline</b> with <b>PyTorch DDP</b>, <b>CUDA</b>, and <b>NCCL</b>, cutting training time by <b>60%</b> and enabling <b>on-the-fly data augmentation</b> that expanded dataset size <b>20x</b>.
               </li>
               <li>
-                Implemented a full MLOps pipeline using Docker, MLflow, and CI/CD, reducing inference time by 45% through CUDA optimization and TensorRT acceleration.
+                Implemented <b>comprehensive MLOps pipeline</b> featuring <b>Docker containerization</b>, <b>MLflow experiment tracking</b>, and <b>CI/CD deployment</b>, <b>reducing model inference time by 45%</b> via <b>CUDA optimization</b> and <b>TensorRT acceleration</b>.
+              </li>
+              <li>
+                Designed <b>robust data preprocessing pipeline</b> applying <b>advanced augmentation techniques</b> to boost model robustness, <b>improving generalization by 15%</b> on unseen microscopy datasets and <b>saving $36K annually</b> in manual annotation costs.
               </li>
             </ul>
-
-            
                         </div>
                     </div>
 
