@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,31 +7,25 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-    /* Other styles */
-    ul {
-        color: var(--text-secondary); /* Adjust to a lighter color */
-        font-size: 1rem;
-        line-height: 1.6;
-    }
+        ul {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
 
-    li {
-        color: #d6d6d6; /* Set a lighter shade */
-    }
-</style>
+        li {
+            color: #d6d6d6;
+        }
 
-    <style>
         :root {
             --bg-primary: #121212;
             --bg-secondary: #1e1e1e;
             --text-primary: #f8f9fa;
-            --text-secondary: #d6d6d6; /* Lightened for better contrast */
-            --accent: #ff6b6b;
-            --accent-hover: #ff8787;
+            --text-secondary: #d6d6d6;
             --card-bg: #252525;
             --border-color: #333333;
-            --rainbow-gradient: linear-gradient(90deg, #ff6b6b, #ffd93d, #6bcf7f, #4d96ff, #9d4edd, #ff6b6b);
         }
-        
+
         body {
             font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
             background-color: var(--bg-primary);
@@ -56,7 +49,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at center, rgba(126, 87, 194, 0.05) 0%, rgba(18, 18, 18, 0) 70%);
+            background: radial-gradient(circle at center, rgba(255, 107, 107, 0.05) 0%, rgba(18, 18, 18, 0) 70%);
             z-index: 0;
         }
         
@@ -92,29 +85,62 @@
             border-radius: 50px;
             font-weight: 500;
             transition: all 0.3s ease;
+            border: none;
         }
         
         .btn-accent {
-            background-color: var(--accent);
-            border-color: var(--accent);
+            background: linear-gradient(270deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            background-size: 400% 400%;
             color: white;
+            animation: rainbow-flow 8s ease infinite;
+        }
+        
+        @keyframes rainbow-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         
         .btn-accent:hover {
-            background-color: var(--accent-hover);
-            border-color: var(--accent-hover);
+            transform: scale(1.05);
+            animation: rainbow-flow 3s ease infinite;
             color: white;
         }
         
         .btn-outline {
-            background-color: transparent;
-            border: 1px solid var(--accent);
-            color: var(--accent);
+            background: var(--bg-primary);
+            border: 2px solid white;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-outline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(270deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            background-size: 400% 400%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            animation: rainbow-flow 8s ease infinite;
+        }
+        
+        .btn-outline:hover::before {
+            opacity: 1;
         }
         
         .btn-outline:hover {
-            background-color: var(--accent);
             color: white;
+            border-color: transparent;
+        }
+        
+        .btn-outline span {
+            position: relative;
+            z-index: 1;
         }
         
         .section-title {
@@ -132,7 +158,14 @@
             bottom: -10px;
             width: 40px;
             height: 3px;
-            background-color: var(--accent);
+            background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            background-size: 200% 100%;
+            animation: rainbow-slide 3s linear infinite;
+        }
+        
+        @keyframes rainbow-slide {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
         }
         
         .card {
@@ -161,9 +194,9 @@
         
         .tech-badge {
             display: inline-block;
-            background-color: rgba(126, 87, 194, 0.1);
-            color: var(--accent);
-            border: 1px solid rgba(126, 87, 194, 0.2);
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 50px;
             padding: 0.35rem 0.75rem;
             margin: 0.25rem;
@@ -171,14 +204,25 @@
         }
         
         .award-card {
-            background-color: rgba(126, 87, 194, 0.08);
-            border-left: 4px solid var(--accent);
+            background-color: rgba(255, 107, 107, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .award-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            z-index: 1;
         }
         
         .highlight-award {
-            background: linear-gradient(135deg, rgba(126, 87, 194, 0.15) 0%, rgba(126, 87, 194, 0.05) 100%);
-            border: 1px solid rgba(126, 87, 194, 0.3);
-            border-left: 4px solid var(--accent);
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(77, 150, 255, 0.1) 50%, rgba(157, 78, 221, 0.1) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
         }
@@ -188,9 +232,20 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 4px;
             height: 100%;
-            background: radial-gradient(circle at top right, rgba(126, 87, 194, 0.2) 0%, rgba(18, 18, 18, 0) 70%);
+            background: linear-gradient(180deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            z-index: 1;
+        }
+        
+        .highlight-award::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 4px;
+            width: calc(100% - 4px);
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(255, 107, 107, 0.15) 0%, rgba(77, 150, 255, 0.1) 50%, rgba(18, 18, 18, 0) 100%);
             z-index: 0;
         }
         
@@ -203,13 +258,20 @@
             z-index: 1;
             display: inline-block;
             padding: 0.5rem 1rem;
-            background-color: var(--accent);
+            background: linear-gradient(270deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            background-size: 400% 400%;
+            animation: rainbow-flow 8s ease infinite;
             border-radius: 4px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
         
         .award-icon {
-            color: var(--accent);
+            background: linear-gradient(270deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            background-size: 400% 400%;
+            animation: rainbow-flow 8s ease infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-size: 2.5rem;
             margin-bottom: 1rem;
             filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
@@ -225,7 +287,7 @@
         }
         
         .experience-date {
-            color: var(--accent);
+            color: #ff6b6b;
             font-size: 0.9rem;
             font-weight: 500;
             margin-bottom: 0.5rem;
@@ -290,14 +352,17 @@
             <h1>KD Bartholomew <span style="font-size: 1rem; opacity: 0.7;">(they/them)</span></h1>
             <p>Data Scientist | Machine Learning Engineer | AI Developer </p>
             <div class="hero-bio">
-                <p>I’m a Data Scientist and AI/ML Engineer who builds end-to-end ML systems spanning ETL pipelines, data warehouses, model development and deployment, CI/CD pipelines, and dashboards. I have a strong mathematics background, with academic research focused on stochastic Markov processes, specifically Brownian motion. Proficient in Python, modern ML frameworks, and cloud infrastructure, I create scalable, production-ready solutions. I am passionate about modeling intelligence and building systems that automate workflows to deliver measurable impact.</p>
+                <p>I'm a Data Scientist and AI/ML Engineer who builds end-to-end ML systems spanning ETL pipelines, data warehouses, model development and deployment, CI/CD pipelines, and dashboards. I have a strong mathematics background, with academic research focused on stochastic Markov processes, specifically Brownian motion. Proficient in Python, modern ML frameworks, and cloud infrastructure, I create scalable, production-ready solutions. I am passionate about modeling intelligence and building systems that automate workflows to deliver measurable impact.</p>
             </div>
             <div class="social-links">
                 <a href="https://github.com/kdbartholomew" class="btn btn-outline btn-custom">
-                    <i class="fab fa-github me-2"></i>GitHub
+                    <span><i class="fab fa-github me-2"></i>GitHub</span>
                 </a>
                 <a href="https://www.linkedin.com/in/kd-bartholomew-34002495/" class="btn btn-outline btn-custom">
-                    <i class="fab fa-linkedin me-2"></i>LinkedIn
+                    <span><i class="fab fa-linkedin me-2"></i>LinkedIn</span>
+                </a>
+                <a href="mailto:contact@kdbartholomew.com" class="btn btn-outline btn-custom">
+                    <span><i class="fas fa-envelope me-2"></i>Connect</span>
                 </a>
                 <a href="KDB_MLE_BIG.pdf" class="btn btn-accent btn-custom" target="_blank">
                     <i class="fas fa-file-alt me-2"></i>Resume
@@ -346,14 +411,12 @@
                         <i class="fas fa-trophy award-icon me-3"></i>
                         <h4 class="highlight-award-title mb-0">ThisIsStatistics: Police Data Challenge</h4>
                     </div>
-                    <p class="education-school" style="color: var(--accent); font-weight: bold;">Best Overall Nationally - Dec 2017</p>
+                    <p class="education-school" style="color: #ff6b6b; font-weight: bold;">Best Overall Nationally - Dec 2017</p>
                     <p class="award-details">Led analysis of Seattle police data, delivering <b>actionable insights implemented by SPD</b> for enhanced community safety.</p>
-            <p class="award-details">Won <b>“Best Overall” nationally</b>; <b>published</b> findings in <b>AMSTATNEWS</b> (American Statistical Association).</p>
-
+            <p class="award-details">Won <b>"Best Overall" nationally</b>; <b>published</b> findings in <b>AMSTATNEWS</b> (American Statistical Association).</p>
                 </div>
             </div>
         </div>
-        <!-- Additional Awards can go here -->
         <div class="col-md-6">
     <div class="card highlight-award">
         <div class="award-content">
@@ -361,96 +424,63 @@
                 <i class="fas fa-trophy award-icon me-3"></i>
                 <h4 class="highlight-award-title mb-0">Founder Award – USF Innovation Summit</h4>
             </div>
-            <p class="award-date" style="color: var(--accent); font-weight: bold;">April 2025</p>
+            <p class="award-date" style="color: #ff6b6b; font-weight: bold;">April 2025</p>
             <p class="award-details">
                 Developed & deployed <b>AI Hire</b>, an end-to-end NLP platform (<b>fine-tuned transformers</b>, <b>vector search</b>, <b>scalable cloud</b>). Awarded funding for <b>ML innovation</b> & <b>full-stack execution</b>.
             </p>
         </div>
     </div>
 </div>
-
     </div>
 </section>
 
-
-    
 <section class="container mt-5">
     <h2 class="section-title">Professional Experience</h2>
     <div class="row gy-4">
-        <!-- Queer Life Space -->
         <div class="col-md-6">
             <div class="card experience-card">
                 <div class="experience-date"> Feb 2025 – Present</div>
                 <h4>Full Stack Data Scientist</h4>
                 <div class="experience-company" style="color: var(--text-secondary);">Queer Life Space</div>
-                
                 <div class="experience-location">San Francisco, CA</div>
             <ul>
-              <li>
-                Built a custom <b>A/B testing framework</b> using <b>JavaScript</b> and <b>GCP</b>, applying sequential statistical experiments optimized for low-traffic, high-variance settings, <b>increasing donation conversions by 15%</b>.
-              </li>
-              <li>
-                Engineered a <b>HIPAA-compliant ETL pipeline</b> in <b>Python</b> and <b>GCP</b>, anonymizing client data <b>across five heterogeneous sources</b> and <b>architecting a PostgreSQL database</b> with role-based access control and encryption.
-              </li>
-              <li>
-                Built a <b>pricing sensitivity model</b> using regression techniques to identify the nonprofit’s <b>minimum sustainable fee</b>, emphasizing <b>interpretability</b> through coefficient analysis and feature importance visualization for <b>20+ non-technical stakeholders</b>.
-              </li>
-              <li>
-                Developed a containerized <b>React + FastAPI</b> dashboard on <b>GCP</b>, featuring statistical visualizations and model outputs enabling real-time pricing adjustments, <b>improving client accessibility by 35%</b> while maintaining financial stability. Implemented <b>CI/CD pipelines</b> with <b>GitHub Actions</b>.
-              </li>
+              <li>Built a custom <b>A/B testing framework</b> using <b>JavaScript</b> and <b>GCP</b>, applying sequential statistical experiments optimized for low-traffic, high-variance settings, <b>increasing donation conversions by 15%</b>.</li>
+              <li>Engineered a <b>HIPAA-compliant ETL pipeline</b> in <b>Python</b> and <b>GCP</b>, anonymizing client data <b>across five heterogeneous sources</b> and <b>architecting a PostgreSQL database</b> with role-based access control and encryption.</li>
+              <li>Built a <b>pricing sensitivity model</b> using regression techniques to identify the nonprofit's <b>minimum sustainable fee</b>, emphasizing <b>interpretability</b> through coefficient analysis and feature importance visualization for <b>20+ non-technical stakeholders</b>.</li>
+              <li>Developed a containerized <b>React + FastAPI</b> dashboard on <b>GCP</b>, featuring statistical visualizations and model outputs enabling real-time pricing adjustments, <b>improving client accessibility by 35%</b> while maintaining financial stability. Implemented <b>CI/CD pipelines</b> with <b>GitHub Actions</b>.</li>
             </ul>
             </div>
         </div>
 
-        <!-- The Nature Conservancy -->
         <div class="col-md-6">
             <div class="card experience-card">
                 <div class="experience-date">Sep 2024 – Present</div>
                 <h4>Data Engineer</h4>
                 <div class="experience-company"style="color: var(--text-secondary);">The Nature Conservancy</div>
-                
                 <div class="experience-location">San Francisco, CA</div>
                 <ul>
-                  <li>
-                    Built a <b>globally scalable, distributed surface water detection pipeline</b> using NDWI, Otsu thresholding, and Canny edge detection, processing <b>3TB+ of satellite imagery weekly</b> across 5 pilot sites. Deployed on <b>AWS (S3, EC2, Lambda)</b> with autoscaling infrastructure and orchestrated via <b>Apache Airflow</b>.
-                  </li>
-                  <li>
-                    Replaced physical stream gauges with an automated satellite-based system, delivering <b>$225K in first-year savings</b> across 5 test sites with projected exponential savings as coverage scales.
-                  </li>
-                  <li>
-                    Developed <b>XGBoost forecasting models</b> with engineered seasonal and hydrological features to predict stream drying, <b>boosting accuracy from 82% to 93%</b> and outperforming SARIMAX baselines across multiple watersheds.
-                  </li>
+                  <li>Built a <b>globally scalable, distributed surface water detection pipeline</b> using NDWI, Otsu thresholding, and Canny edge detection, processing <b>3TB+ of satellite imagery weekly</b> across 5 pilot sites. Deployed on <b>AWS (S3, EC2, Lambda)</b> with autoscaling infrastructure and orchestrated via <b>Apache Airflow</b>.</li>
+                  <li>Replaced physical stream gauges with an automated satellite-based system, delivering <b>$225K in first-year savings</b> across 5 test sites with projected exponential savings as coverage scales.</li>
+                  <li>Developed <b>XGBoost forecasting models</b> with engineered seasonal and hydrological features to predict stream drying, <b>boosting accuracy from 82% to 93%</b> and outperforming SARIMAX baselines across multiple watersheds.</li>
                 </ul>
             </div>
         </div>
 
-        <!-- University of San Francisco -->
         <div class="col-md-6">
             <div class="card experience-card">
                 <div class="experience-date">Aug 2022 – Jun 2024</div>
                 <h4>Machine Learning Engineer</h4>
                 <div class="experience-company" style="color: var(--text-secondary);">University of San Francisco</div>
-
-                            <div class="experience-location">San Francisco, CA</div>
+                <div class="experience-location">San Francisco, CA</div>
            <ul>
-              <li>
-                Developed and deployed custom <b>U-Net architecture</b> using <b>PyTorch</b> with transfer learning from <b>ResNet backbone</b>, achieving <b>98% pixel-level accuracy</b> for automated cell segmentation across 50,000+ microscopy images.
-              </li>
-              <li>
-                Optimized <b>multi-GPU training pipeline</b> with <b>PyTorch DDP</b>, <b>CUDA</b>, and <b>NCCL</b>, cutting training time by <b>60%</b> and enabling <b>on-the-fly data augmentation</b> that expanded dataset size <b>20x</b>.
-              </li>
-              <li>
-                Implemented <b>comprehensive MLOps pipeline</b> featuring <b>Docker containerization</b>, <b>MLflow experiment tracking</b>, and <b>CI/CD deployment</b>, <b>reducing model inference time by 45%</b> via <b>CUDA optimization</b> and <b>TensorRT acceleration</b>.
-              </li>
-              <li>
-                Designed <b>robust data preprocessing pipeline</b> applying <b>advanced augmentation techniques</b> to boost model robustness, <b>improving generalization by 15%</b> on unseen microscopy datasets and <b>saving $36K annually</b> in manual annotation costs.
-              </li>
+              <li>Developed and deployed custom <b>U-Net architecture</b> using <b>PyTorch</b> with transfer learning from <b>ResNet backbone</b>, achieving <b>98% pixel-level accuracy</b> for automated cell segmentation across 50,000+ microscopy images.</li>
+              <li>Optimized <b>multi-GPU training pipeline</b> with <b>PyTorch DDP</b>, <b>CUDA</b>, and <b>NCCL</b>, cutting training time by <b>60%</b> and enabling <b>on-the-fly data augmentation</b> that expanded dataset size <b>20x</b>.</li>
+              <li>Implemented <b>comprehensive MLOps pipeline</b> featuring <b>Docker containerization</b>, <b>MLflow experiment tracking</b>, and <b>CI/CD deployment</b>, <b>reducing model inference time by 45%</b> via <b>CUDA optimization</b> and <b>TensorRT acceleration</b>.</li>
+              <li>Designed <b>robust data preprocessing pipeline</b> applying <b>advanced augmentation techniques</b> to boost model robustness, <b>improving generalization by 15%</b> on unseen microscopy datasets and <b>saving $36K annually</b> in manual annotation costs.</li>
             </ul>
-                        </div>
-                    </div>
+        </div>
+    </div>
 
-
-    <!-- Math Instructor -->
 <div class="col-md-6">
     <div class="card experience-card">
         <div class="experience-date">Jan 2017 – Aug 2022</div>
@@ -463,200 +493,192 @@
         </ul>
     </div>
 </div>
-
+</div>
 </section>
 
-    
-    <section class="container mt-5">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="row gy-4">
-            <div class="col-md-4">
-    <div class="card">
-        <h4>Weight Loss AI Assistant</h4>
-        <p>
-          <b>Fine-tuned and prompt-engineered CV and LLM models</b> for automated food logging and personalized guidance using <b>retrieval-augmented generation (RAG)</b> with <b>vector databases</b> for context-aware coaching.<br>
-          Developed and deployed a <b>scalable multi-agent system</b> using <b>Docker containerization</b> and <b>cloud orchestration (AWS/GCP)</b>, enabling <b>end-to-end AI/ML pipeline automation</b> with real-time agent coordination and expert knowledge integration via LangChain and a PostgreSQL + Supabase backend.
-        </p>
-
-        <div class="mt-3">
-            <span class="tech-badge">Python</span>
-            <span class="tech-badge">Docker</span>
-            <span class="tech-badge">AWS</span>
-            <span class="tech-badge">GCP</span>
-            <span class="tech-badge">LangChain</span>
-            <span class="tech-badge">CV</span>
-            <span class="tech-badge">LLM</span>
-        </div>
-    </div>
-</div>
-            <div class="col-md-4">
-    <div class="card">
-        <h4>Distributed Sentiment Analysis Pipeline with Apache Spark &amp; GCS</h4>
-        <p>
-            Engineered a distributed <b>Spark SQL pipeline</b> on <b>Google Cloud Storage (GCS)</b> and <b>MongoDB Atlas</b> to enable scalable ingestion, storage, and querying of scraped news headlines and YouTube comments.<br>
-            Deployed <b>Hugging Face sentiment models</b> for large-scale NLP, uncovering alignment patterns between media narratives and public sentiment in <b>unstructured text datasets</b>.
-        </p>
-        <div class="mt-3">
-            <span class="tech-badge">Apache Spark</span>
-            <span class="tech-badge">Spark SQL</span>
-            <span class="tech-badge">Google Cloud Storage</span>
-            <span class="tech-badge">MongoDB Atlas</span>
-            <span class="tech-badge">Hugging Face</span>
-            <span class="tech-badge">NLP</span>
-        </div>
-    </div>
-</div>
-
-
-            <div class="col-md-4">
-                <div class="card">
-                    <h4>Recommendation System with Funk SVD</h4>
-                    <p>Applied Funk SVD matrix factorization to impute missing data and uncover latent growth patterns. Developed a custom sequential neural network that <b>enhanced performance by 40% despite 30% missing data.</b></p>
-                    <div class="mt-3">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">SVD</span>
-                        <span class="tech-badge">Neural Networks</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <h4>Metropolis-Hastings for Cryptography</h4>
-                    <p>Engineered and <b>optimized</b> Metropolis-Hastings (MH) algorithms for cryptographic applications <b>in a novel way</b>, <b>enabling convergence on long input sequences that traditional methods couldn't compute</b>.</p>
-                    <div class="mt-3">
-                        <span class="tech-badge">Cryptography</span>
-                        <span class="tech-badge">MCMC</span>
-                        <span class="tech-badge">Python</span>
-                    </div>
-                    <div class="mt-3">
-                        <a href="https://github.com/kdbartholomew/MetropolisHastingsForCryptography" target="_blank">
-                            <button class="btn-custom btn-accent">Demo</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <h4>Super-positioning in Neural Networks</h4>
-                    <p>Developed toy feed-forward ReLU-based models to explore neural network super-positioning and pattern representation. Developed and analyzed noisy synthetic datasets to visualize neural network behavior.</p>
-                    <div class="mt-3">
-                        <span class="tech-badge">PyTorch</span>
-                        <span class="tech-badge">Deep Learning</span>
-                        <span class="tech-badge">Python</span>
-                    </div>
+<section class="container mt-5">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="row gy-4">
+        <div class="col-md-4">
+            <div class="card">
+                <h4>Weight Loss AI Assistant</h4>
+                <p><b>Fine-tuned and prompt-engineered CV and LLM models</b> for automated food logging and personalized guidance using <b>retrieval-augmented generation (RAG)</b> with <b>vector databases</b> for context-aware coaching.<br>
+                Developed and deployed a <b>scalable multi-agent system</b> using <b>Docker containerization</b> and <b>cloud orchestration (AWS/GCP)</b>, enabling <b>end-to-end AI/ML pipeline automation</b> with real-time agent coordination and expert knowledge integration via LangChain and a PostgreSQL + Supabase backend.</p>
+                <div class="mt-3">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">AWS</span>
+                    <span class="tech-badge">GCP</span>
+                    <span class="tech-badge">LangChain</span>
+                    <span class="tech-badge">CV</span>
+                    <span class="tech-badge">LLM</span>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <section class="container mt-5">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="row mt-4">
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <h4><i class="fas fa-laptop-code me-2"></i>Core Competencies</h4>
-                    <div>
-                        <span class="tech-badge">Probability Theory</span>
-                        <span class="tech-badge">Statistical Analysis</span>
-                        <span class="tech-badge">Machine Learning</span>
-                        <span class="tech-badge">Linear Algebra</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <h4><i class="fas fa-code me-2"></i>Programming Languages</h4>
-                    <div>
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">R</span>
-                        <span class="tech-badge">SQL</span>
-                        <span class="tech-badge">NoSQL</span>
-                        <span class="tech-badge">Java</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <h4><i class="fas fa-brain me-2"></i>Data Science & ML</h4>
-                    <div>
-                        <span class="tech-badge">PyTorch</span>
-                        <span class="tech-badge">TensorFlow</span>
-                        <span class="tech-badge">Keras</span>
-                        <span class="tech-badge">Scikit-learn</span>
-                        <span class="tech-badge">XGBoost</span>
-                        <span class="tech-badge">Hugging Face</span>
-                        <span class="tech-badge">Pandas</span>
-                        <span class="tech-badge">NumPy</span>
-                        <span class="tech-badge">CUDA</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <h4><i class="fas fa-cloud me-2"></i>Big Data & Cloud</h4>
-                    <div>
-                        <span class="tech-badge">AWS S3</span>
-                        <span class="tech-badge">Google Cloud</span>
-                        <span class="tech-badge">Apache Spark</span>
-                        <span class="tech-badge">Apache Airflow</span>
-                        <span class="tech-badge">PostgreSQL</span>
-                        <span class="tech-badge">Snowflake</span>
-                        <span class="tech-badge">MySQL</span>
-                        <span class="tech-badge">MongoDB</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <h4><i class="fas fa-tools me-2"></i>Tools & Environments</h4>
-                    <div>
-                        <span class="tech-badge">Git</span>
-                        <span class="tech-badge">GitHub Actions</span>
-                        <span class="tech-badge">VS Code</span>
-                        <span class="tech-badge">Docker</span>
-                        <span class="tech-badge">Bash/Zsh</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <h4><i class="fas fa-chart-line me-2"></i>Visualization & Reporting</h4>
-                    <div>
-                        <span class="tech-badge">Matplotlib</span>
-                        <span class="tech-badge">Seaborn</span>
-                        <span class="tech-badge">Plotly</span>
-                        <span class="tech-badge">Geopandas</span>
-                        <span class="tech-badge">Flask</span>
-                        <span class="tech-badge">FastAPI</span>
-                        <span class="tech-badge">Power BI</span>
-                        <span class="tech-badge">Streamlit</span>
-                    </div>
+        <div class="col-md-4">
+            <div class="card">
+                <h4>Distributed Sentiment Analysis Pipeline with Apache Spark &amp; GCS</h4>
+                <p>Engineered a distributed <b>Spark SQL pipeline</b> on <b>Google Cloud Storage (GCS)</b> and <b>MongoDB Atlas</b> to enable scalable ingestion, storage, and querying of scraped news headlines and YouTube comments.<br>
+                Deployed <b>Hugging Face sentiment models</b> for large-scale NLP, uncovering alignment patterns between media narratives and public sentiment in <b>unstructured text datasets</b>.</p>
+                <div class="mt-3">
+                    <span class="tech-badge">Apache Spark</span>
+                    <span class="tech-badge">Spark SQL</span>
+                    <span class="tech-badge">Google Cloud Storage</span>
+                    <span class="tech-badge">MongoDB Atlas</span>
+                    <span class="tech-badge">Hugging Face</span>
+                    <span class="tech-badge">NLP</span>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <section class="about-section">
-        <div class="container">
-            <div class="about-content text-center">
-                <h2 class="section-title text-center mb-4">Let's Connect</h2>
-                <p class="lead">Looking for opportunities where I can leverage my data science expertise to solve complex problems and make a meaningful impact. Open to roles in data science, machine learning engineering, ai engineering, data engineering, and research.</p>
-                <div class="mt-4">
-                    <a href="mailto:contact@kdbartholomew.com" class="btn btn-accent btn-custom">
-                        <i class="fas fa-envelope me-2"></i>Contact Me
+        <div class="col-md-4">
+            <div class="card">
+                <h4>Recommendation System with Funk SVD</h4>
+                <p>Applied Funk SVD matrix factorization to impute missing data and uncover latent growth patterns. Developed a custom sequential neural network that <b>enhanced performance by 40% despite 30% missing data.</b></p>
+                <div class="mt-3">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">SVD</span>
+                    <span class="tech-badge">Neural Networks</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <h4>Metropolis-Hastings for Cryptography</h4>
+                <p>Engineered and <b>optimized</b> Metropolis-Hastings (MH) algorithms for cryptographic applications <b>in a novel way</b>, <b>enabling convergence on long input sequences that traditional methods couldn't compute</b>.</p>
+                <div class="mt-3">
+                    <span class="tech-badge">Cryptography</span>
+                    <span class="tech-badge">MCMC</span>
+                    <span class="tech-badge">Python</span>
+                </div>
+                <div class="mt-3">
+                    <a href="https://github.com/kdbartholomew/MetropolisHastingsForCryptography" target="_blank">
+                        <button class="btn-custom btn-accent">Demo</button>
                     </a>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <footer class="text-center">
-        <div class="container">
-            <p>&copy; 2025 KD Bartholomew</p>
-            <p class="small">Data Scientist & Machine Learning Engineer</p>
+        <div class="col-md-4">
+            <div class="card">
+                <h4>Super-positioning in Neural Networks</h4>
+                <p>Developed toy feed-forward ReLU-based models to explore neural network super-positioning and pattern representation. Developed and analyzed noisy synthetic datasets to visualize neural network behavior.</p>
+                <div class="mt-3">
+                    <span class="tech-badge">PyTorch</span>
+                    <span class="tech-badge">Deep Learning</span>
+                    <span class="tech-badge">Python</span>
+                </div>
+            </div>
         </div>
-    </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+</section>
+
+<section class="container mt-5">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="row mt-4">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <h4><i class="fas fa-laptop-code me-2"></i>Core Competencies</h4>
+                <div>
+                    <span class="tech-badge">Probability Theory</span>
+                    <span class="tech-badge">Statistical Analysis</span>
+                    <span class="tech-badge">Machine Learning</span>
+                    <span class="tech-badge">Linear Algebra</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <h4><i class="fas fa-code me-2"></i>Programming Languages</h4>
+                <div>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">R</span>
+                    <span class="tech-badge">SQL</span>
+                    <span class="tech-badge">NoSQL</span>
+                    <span class="tech-badge">Java</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <h4><i class="fas fa-brain me-2"></i>Data Science & ML</h4>
+                <div>
+                    <span class="tech-badge">PyTorch</span>
+                    <span class="tech-badge">TensorFlow</span>
+                    <span class="tech-badge">Keras</span>
+                    <span class="tech-badge">Scikit-learn</span>
+                    <span class="tech-badge">XGBoost</span>
+                    <span class="tech-badge">Hugging Face</span>
+                    <span class="tech-badge">Pandas</span>
+                    <span class="tech-badge">NumPy</span>
+                    <span class="tech-badge">CUDA</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <h4><i class="fas fa-cloud me-2"></i>Big Data & Cloud</h4>
+                <div>
+                    <span class="tech-badge">AWS S3</span>
+                    <span class="tech-badge">Google Cloud</span>
+                    <span class="tech-badge">Apache Spark</span>
+                    <span class="tech-badge">Apache Airflow</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">Snowflake</span>
+                    <span class="tech-badge">MySQL</span>
+                    <span class="tech-badge">MongoDB</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <h4><i class="fas fa-tools me-2"></i>Tools & Environments</h4>
+                <div>
+                    <span class="tech-badge">Git</span>
+                    <span class="tech-badge">GitHub Actions</span>
+                    <span class="tech-badge">VS Code</span>
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">Bash/Zsh</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <h4><i class="fas fa-chart-line me-2"></i>Visualization & Reporting</h4>
+                <div>
+                    <span class="tech-badge">Matplotlib</span>
+                    <span class="tech-badge">Seaborn</span>
+                    <span class="tech-badge">Plotly</span>
+                    <span class="tech-badge">Geopandas</span>
+                    <span class="tech-badge">Flask</span>
+                    <span class="tech-badge">FastAPI</span>
+                    <span class="tech-badge">Power BI</span>
+                    <span class="tech-badge">Streamlit</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-section">
+    <div class="container">
+        <div class="about-content text-center">
+            <h2 class="section-title text-center mb-4">Let's Connect</h2>
+            <p class="lead">Looking for opportunities where I can leverage my data science expertise to solve complex problems and make a meaningful impact. Open to roles in data science, machine learning engineering, ai engineering, data engineering, and research.</p>
+            <div class="mt-4">
+                <a href="mailto:contact@kdbartholomew.com" class="btn btn-accent btn-custom">
+                    <i class="fas fa-envelope me-2"></i>Contact Me
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="text-center">
+    <div class="container">
+        <p>&copy; 2025 KD Bartholomew</p>
+        <p class="small">Data Scientist & Machine Learning Engineer</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
