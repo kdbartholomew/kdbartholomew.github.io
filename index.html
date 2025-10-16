@@ -70,17 +70,43 @@
             }
         }
         
+        /* UPDATED H1 STYLES */
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+            font-size: 5rem; /* Bigger name */
+            font-weight: 900;
+            letter-spacing: -0.05em; /* Tighter spacing */
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-primary) 100%); /* Enhanced gradient */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            position: relative; /* Needed for shine animation */
+            overflow: hidden; /* Needed for shine animation */
         }
 
+        /* Shine animation for the h1 text */
+        .hero h1::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -200%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(
+                90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.2) 50%, 
+                transparent 100%
+            );
+            animation: shine 5s infinite cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes shine {
+            0% { left: -200%; }
+            100% { left: 200%; }
+        }
+        /* END UPDATED H1 STYLES */
+        
         .hero h1 span {
             background: none;
             -webkit-text-fill-color: var(--text-primary);
@@ -390,7 +416,7 @@
         
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3.5rem;
             }
             .hero .subtitle {
                 font-size: 1.1rem;
@@ -446,14 +472,11 @@
                 <a href="https://www.linkedin.com/in/kd-bartholomew-34002495/" class="btn btn-outline-custom btn-custom">
                     <i class="fab fa-linkedin"></i>LinkedIn
                 </a>
-                <a href="mailto:contact@kdbartholomew.com" class="btn btn-outline-custom btn-custom">
+                <a href="mailto:contact@kdbartholomew.com" class="btn btn-primary-custom btn-custom">
                     <i class="fas fa-envelope"></i>Connect
                 </a>
-                <a href="KDB_MLE_BIG.pdf" class="btn btn-primary-custom btn-custom" target="_blank">
-                    <i class="fas fa-file-alt"></i>Resume
-                </a>
+                </div>
             </div>
-        </div>
     </section>
 
     <!-- 2. EDUCATION -->
