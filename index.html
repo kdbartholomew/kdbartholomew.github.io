@@ -14,6 +14,7 @@
         /* 2. Custom Milker Font for H1 Name - NOTE: Milker.otf must be in the same folder */
         @font-face {
             font-family: 'Milker';
+            /* Note: We assume the 'Milker.otf' file is available in the environment */
             src: url('Milker.otf') format('opentype');
             font-weight: normal;
             font-style: normal;
@@ -70,6 +71,8 @@
             position: relative;
             z-index: 1;
             animation: fadeInUp 1s ease-out;
+            /* FIX: Allow mouse events to pass through the text to the canvas layer beneath */
+            pointer-events: none; 
         }
 
         @keyframes fadeInUp {
@@ -122,6 +125,8 @@
             justify-content: center;
             flex-wrap: wrap;
             margin-top: 2.5rem;
+            /* FIX: Re-enable mouse events for buttons/links within .hero-content */
+            pointer-events: auto;
         }
         
         .btn-custom {
@@ -786,95 +791,95 @@
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
-      particlesJS("liquid-bg", {
-        "particles": {
-          "number": {
-            "value": 100, /* Increased from 80 to 100 as requested earlier */
-            "density": {
-              "enable": true,
-              "value_area": 800
-            }
-          },
-          "color": {
-            "value": "#00d4ff" /* Matches your --accent-primary color */
-          },
-          "shape": {
-            "type": "circle",
-          },
-          "opacity": {
-            "value": 0.5,
-            "random": false,
-            "anim": {
-              "enable": false,
-            }
-          },
-          "size": {
-            "value": 3,
-            "random": true,
-            "anim": {
-              "enable": false,
-            }
-          },
-          "line_linked": {
-            "enable": true,
-            "distance": 150,
-            "color": "#0099ff", /* Brighter color for visibility */
-            "opacity": 0.4,    /* Increased opacity for visibility */
-            "width": 1
-          },
-          "move": {
-            "enable": true,
-            "speed": 2,
-            "direction": "none",
-            "random": false,
-            "straight": false,
-            "out_mode": "out",
-            "bounce": false,
-          }
-        },
-        "interactivity": {
-          "detect_on": "canvas",
-          "events": {
-            "onhover": {
-              "enable": true,
-              /* CHANGED from "repulse" to "grab" to connect particles near the cursor */
-              "mode": "grab" 
+        particlesJS("liquid-bg", {
+            "particles": {
+                "number": {
+                    "value": 100, /* Increased from 80 to 100 as requested earlier */
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#00d4ff" /* Matches your --accent-primary color */
+                },
+                "shape": {
+                    "type": "circle",
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#0099ff", /* Brighter color for visibility */
+                    "opacity": 0.4,    /* Increased opacity for visibility */
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                }
             },
-            "onclick": {
-              "enable": true,
-              "mode": "push"
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        /* CHANGED from "repulse" to "grab" to connect particles near the cursor */
+                        "mode": "grab" 
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    /* The "grab" mode settings below now control the connection logic */
+                    "grab": {
+                        "distance": 150, /* Set grab distance to match line_linked distance */
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 50,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 4
+                    },
+                    "repulse": {
+                        "distance": 100,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
             },
-            "resize": true
-          },
-          "modes": {
-            /* The "grab" mode settings below now control the connection logic */
-            "grab": {
-              "distance": 150, /* Set grab distance to match line_linked distance */
-              "line_linked": {
-                "opacity": 1
-              }
-            },
-            "bubble": {
-              "distance": 400,
-              "size": 50,
-              "duration": 2,
-              "opacity": 8,
-              "speed": 4
-            },
-            "repulse": {
-              "distance": 100,
-              "duration": 0.4
-            },
-            "push": {
-              "particles_nb": 4
-            },
-            "remove": {
-              "particles_nb": 2
-            }
-          }
-        },
-        "retina_detect": true
-      });
+            "retina_detect": true
+        });
     </script>
 </body>
 </html>
