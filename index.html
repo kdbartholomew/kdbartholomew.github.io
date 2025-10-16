@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KD Bartholomew | Data Scientist</title>
     
+    <!-- 1. Inter Font for Body Text -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -401,8 +402,9 @@
         }
         
         @media (max-width: 768px) {
+            /* FIXED: Name font size for mobile devices */
             .hero h1 {
-                font-size: 3.5rem;
+                font-size: 3rem; /* Reduced from 3.5rem to 3rem for better fit */
             }
             .hero .subtitle {
                 font-size: 1.1rem;
@@ -441,9 +443,11 @@
     </style>
 </head>
 <body>
+    <!-- 1. HERO SECTION -->
     <section class="hero">
         <div id="liquid-bg"></div>
         <div class="hero-content">
+            <!-- FIXED: Pronoun Kerning (letter-spacing: 0.15em) -->
             <h1>KD Bartholomew <span style="font-size: 1rem; opacity: 0.7; font-weight: 400; color: var(--text-primary); letter-spacing: 0.15em;">(they/them)</span></h1>
             <p class="subtitle">Data Scientist | Machine Learning Engineer | AI Developer</p>
             <div class="hero-bio">
@@ -458,11 +462,11 @@
                 <a href="https://www.linkedin.com/in/kd-bartholomew-34002495/" class="btn btn-outline-custom btn-custom">
                     <i class="fab fa-linkedin"></i>LinkedIn
                 </a>
-                <a href="mailto:bartholomewkd@gmail.com" class="btn btn-primary-custom btn-custom">
+                <a href="mailto:contact@kdbartholomew.com" class="btn btn-primary-custom btn-custom">
                     <i class="fas fa-envelope"></i>Connect
                 </a>
-                </div>
             </div>
+        </div>
     </section>
 
     <!-- 2. EDUCATION -->
@@ -766,12 +770,13 @@
     </footer>
 
     
+      <!-- SCRIPTS FOR ANIMATION
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
       particlesJS("liquid-bg", {
         "particles": {
           "number": {
-            "value": 100,
+            "value": 100, /* Increased from 80 to 100 as requested earlier */
             "density": {
               "enable": true,
               "value_area": 800
@@ -800,8 +805,8 @@
           "line_linked": {
             "enable": true,
             "distance": 150,
-            "color": "#0066ff", /* Matches your --accent-secondary color */
-            "opacity": 0.3,
+            "color": "#0099ff", /* Brighter color for visibility */
+            "opacity": 0.4,    /* Increased opacity for visibility */
             "width": 1
           },
           "move": {
@@ -819,7 +824,8 @@
           "events": {
             "onhover": {
               "enable": true,
-              "mode": "repulse"
+              /* CHANGED from "repulse" to "grab" to connect particles near the cursor */
+              "mode": "grab" 
             },
             "onclick": {
               "enable": true,
@@ -828,8 +834,9 @@
             "resize": true
           },
           "modes": {
+            /* The "grab" mode settings below now control the connection logic */
             "grab": {
-              "distance": 400,
+              "distance": 150, /* Set grab distance to match line_linked distance */
               "line_linked": {
                 "opacity": 1
               }
