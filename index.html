@@ -7,6 +7,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+    /* 1. FONT EMBEDDING: Place Milker.otf in the same folder as your HTML file */
+    @font-face {
+        font-family: 'Milker';
+        src: url('Milker.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
     * {
         margin: 0;
         padding: 0;
@@ -26,7 +34,8 @@
     }
 
     body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+        /* Reverted body font to standard sans-serif for legibility */
+        font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif; 
         background-color: var(--bg-primary);
         color: var(--text-primary);
         line-height: 1.6;
@@ -70,33 +79,19 @@
         }
     }
     
-    /* NEW: Name with pulse glow effect */
+    /* UPDATED: Name with new font, no animation, no glow */
     .hero h1 {
+        font-family: 'Milker', sans-serif; /* New Milker font applied */
         font-size: 5rem;
-        font-weight: 900;
+        font-weight: normal; /* Setting to normal as it's a custom font */
         letter-spacing: -0.05em;
         margin-bottom: 1rem;
-        color: var(--text-primary); /* Use solid color for shadow */
-        text-shadow: 
-            0 0 10px rgba(0, 212, 255, 0.4),
-            0 0 20px rgba(0, 212, 255, 0.2);
-        animation: text-pulse-glow 4s infinite alternate ease-in-out;
+        color: var(--text-primary); 
+        /* Removed text-shadow and animation */
         position: relative;
     }
 
-    /* Keyframes for the soft pulse effect */
-    @keyframes text-pulse-glow {
-        0% {
-            text-shadow: 
-                0 0 8px rgba(0, 212, 255, 0.3),
-                0 0 16px rgba(0, 212, 255, 0.1);
-        }
-        100% {
-            text-shadow: 
-                0 0 12px rgba(0, 212, 255, 0.6),
-                0 0 24px rgba(0, 212, 255, 0.3);
-        }
-    }
+    /* REMOVED @keyframes text-pulse-glow */
     
     .hero h1 span {
         background: none;
