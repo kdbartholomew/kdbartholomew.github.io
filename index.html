@@ -508,7 +508,7 @@
     <section class="container mt-5 pt-5">
         <h2 class="section-title">Professional Experience</h2>
         <div class="row gy-4">
-            <div class="col-md-6">
+            <div class="col-12">
                 <div class="card">
                     <div class="experience-date">Apr 2026 – Present</div>
                     <h4>Data Scientist</h4>
@@ -516,7 +516,7 @@
                     <div class="experience-location">Remote</div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-12">
                 <div class="card">
                     <div class="experience-date">Feb 2025 – Present</div>
                     <h4>Full Stack Data Scientist</h4>
@@ -531,7 +531,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-12">
                 <div class="card">
                     <div class="experience-date">Sep 2024 – Present</div>
                     <h4>Data Engineer</h4>
@@ -545,7 +545,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-12">
                 <div class="card">
                     <div class="experience-date">Aug 2022 – Jun 2024</div>
                     <h4>Machine Learning Engineer</h4>
@@ -560,7 +560,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-12">
                 <div class="card">
                     <div class="experience-date">Jan 2017 – Aug 2022</div>
                     <h4>Math Instructor</h4>
@@ -827,14 +827,14 @@
         particlesJS("liquid-bg", {
             "particles": {
                 "number": {
-                    "value": 100, /* Increased from 80 to 100 as requested earlier */
+                    "value": 100,
                     "density": {
                         "enable": true,
                         "value_area": 800
                     }
                 },
                 "color": {
-                    "value": "#00d4ff" /* Matches your --accent-primary color */
+                    "value": "#00d4ff"
                 },
                 "shape": {
                     "type": "circle",
@@ -856,8 +856,8 @@
                 "line_linked": {
                     "enable": true,
                     "distance": 150,
-                    "color": "#0099ff", /* Brighter color for visibility */
-                    "opacity": 0.4,    /* Increased opacity for visibility */
+                    "color": "#0099ff",
+                    "opacity": 0.4,
                     "width": 1
                 },
                 "move": {
@@ -875,7 +875,6 @@
                 "events": {
                     "onhover": {
                         "enable": true,
-                        /* CHANGED from "repulse" to "grab" to connect particles near the cursor */
                         "mode": "grab" 
                     },
                     "onclick": {
@@ -885,9 +884,8 @@
                     "resize": true
                 },
                 "modes": {
-                    /* The "grab" mode settings below now control the connection logic */
                     "grab": {
-                        "distance": 150, /* Set grab distance to match line_linked distance */
+                        "distance": 150,
                         "line_linked": {
                             "opacity": 1
                         }
