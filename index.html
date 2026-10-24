@@ -510,23 +510,20 @@
         <div class="row gy-4">
             <div class="col-12">
                 <div class="card">
-                    <div class="experience-date">Apr 2026 – Present</div>
+                    <div class="experience-date">Apr 2026 – Sep 2026</div>
                     <h4>Data Scientist</h4>
                     <div class="experience-company">AirDNA</div>
                     <div class="experience-location">Remote</div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="card">
-                    <div class="experience-date">Feb 2025 – Present</div>
-                    <h4>Full Stack Data Scientist</h4>
-                    <div class="experience-company">Queer Life Space</div>
-                    <div class="experience-location">San Francisco, CA</div>
                     <ul>
-                        <li>Built a custom <b>A/B testing framework</b> using <b>JavaScript</b> and <b>GCP</b>, applying sequential statistical experiments optimized for low-traffic, high-variance settings, <b>increasing donation conversions by 15%</b>.</li>
-                        <li>Engineered a <b>HIPAA-compliant ETL pipeline</b> in <b>Python</b> and <b>GCP</b>, anonymizing client data <b>across five heterogeneous sources</b> and <b>architecting a PostgreSQL database</b> with role-based access control and encryption.</li>
-                        <li>Built a <b>pricing sensitivity model</b> using regression techniques to identify the nonprofit's <b>minimum sustainable fee</b>, emphasizing <b>interpretability</b> through coefficient analysis and feature importance visualization for <b>20+ non-technical stakeholders</b>.</li>
-                        <li>Developed a containerized <b>React + FastAPI</b> dashboard on <b>GCP</b>, featuring statistical visualizations and model outputs enabling real-time pricing adjustments, <b>improving client accessibility by 35%</b> while maintaining financial stability. Implemented <b>CI/CD pipelines</b> with <b>GitHub Actions</b>.</li>
+                        <li>Built three per-listing <b>dynamic pricing</b> components powering <b>AirDNA Adapt</b>, an <b>AI-native revenue management system</b> with <b>60%+ beta-to-paid conversion</b> and <b>$2M+ projected ARR</b>, computed <b>on the fly at onboarding</b> and retrained daily via <b>Airflow DAGs</b>:
+                            <ul>
+                                <li><b>Event price lift predictions</b> for nearby events up to <b>2 years out</b>, applied as multipliers on live rates.</li>
+                                <li><b>Seasonality detection</b> and <b>peak/shoulder/low season classification</b>, informing Adapt's pricing strategies.</li>
+                                <li>User-facing <b>comp sets</b> of the most similar nearby listings, contextualizing Adapt's predicted prices with <b>AI-generated reasoning</b>.</li>
+                            </ul>
+                        </li>
+                        <li>Developed <b>price variability</b> and <b>property quality</b> metrics covering <b>15M+ listings globally</b> as <b>Airflow</b>-orchestrated <b>Databricks</b> jobs, used to filter Adapt's training data, and served to clients through AirDNA's data platform.</li>
+                        <li>Defined location types covering all <b>120K+ AirDNA markets worldwide</b> using <b>LLMs</b>, <b>engineering geospatial features</b> from external data sources as model context in place of high-dimensional GeoJSON market boundary polygons.</li>
                     </ul>
                 </div>
             </div>
